@@ -1,0 +1,636 @@
+{
+	"info": {
+		"_postman_id": "74a678be-97b8-4bc4-ab00-bb9e6a433613",
+		"name": "QnA Maker Postman Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Knowledgebase",
+			"item": [
+				{
+					"name": "Create Knowledgebase",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{Ocp-Apim-Subscription-Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QnA Maker FAQ\",\n  \"qnaList\": [\n    {\n      \"id\": 0,\n      \"answer\": \"You can change the default message if you use the QnAMakerDialog. See this for details: https://azure.microsoft.com/en-us/services/cognitive-services/qna-maker/faq/\",\n      \"source\": \"Custom Editorial\",\n      \"questions\": [\n        \"How can I change the default message from QnA Maker?\"\n      ],\n      \"metadata\": []\n    },\n    {\n      \"id\": 0,\n      \"answer\": \"You can use our REST apis to manage your KB. See here for details: https://westus.dev.cognitive.microsoft.com/docs/services/58994a073d9e04097c7ba6fe/operations/58994a073d9e041ad42d9baa\",\n      \"source\": \"Custom Editorial\",\n      \"questions\": [\n        \"How do I programmatically update my KB?\"\n      ],\n      \"metadata\": [\n        {\n          \"name\": \"category\",\n          \"value\": \"api\"\n        }\n      ]\n    }\n  ],\n  \"urls\": [\n\t\"https://azure.microsoft.com/en-us/services/cognitive-services/qna-maker/faq/\"\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://{{region}}.api.cognitive.microsoft.com/qnamaker/v4.0/knowledgebases/create",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"api",
+								"cognitive",
+								"microsoft",
+								"com"
+							],
+							"path": [
+								"qnamaker",
+								"v4.0",
+								"knowledgebases",
+								"create"
+							]
+						},
+						"description": "Asynchronous operation to create a new knowledgebase."
+					},
+					"response": []
+				},
+				{
+					"name": "Download Knowledgebase",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{Ocp-Apim-Subscription-Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.api.cognitive.microsoft.com/qnamaker/v4.0/knowledgebases/{{kbId}}/{{environment}}/qna",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"api",
+								"cognitive",
+								"microsoft",
+								"com"
+							],
+							"path": [
+								"qnamaker",
+								"v4.0",
+								"knowledgebases",
+								"{{kbId}}",
+								"{{environment}}",
+								"qna"
+							]
+						},
+						"description": "Download the knowledgebase."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Knowledgebase Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{Ocp-Apim-Subscription-Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.api.cognitive.microsoft.com/qnamaker/v4.0/knowledgebases/{{kbId}}",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"api",
+								"cognitive",
+								"microsoft",
+								"com"
+							],
+							"path": [
+								"qnamaker",
+								"v4.0",
+								"knowledgebases",
+								"{{kbId}}"
+							]
+						},
+						"description": "Gets details of a specific knowledgebase."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Knowledgebases for user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{Ocp-Apim-Subscription-Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.api.cognitive.microsoft.com/qnamaker/v4.0/knowledgebases",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"api",
+								"cognitive",
+								"microsoft",
+								"com"
+							],
+							"path": [
+								"qnamaker",
+								"v4.0",
+								"knowledgebases"
+							]
+						},
+						"description": "Gets all knowledgebases for a user."
+					},
+					"response": []
+				},
+				{
+					"name": "Publish Knowledgebase",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{Ocp-Apim-Subscription-Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.api.cognitive.microsoft.com/qnamaker/v4.0/knowledgebases/{{kbId}}",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"api",
+								"cognitive",
+								"microsoft",
+								"com"
+							],
+							"path": [
+								"qnamaker",
+								"v4.0",
+								"knowledgebases",
+								"{{kbId}}"
+							]
+						},
+						"description": "Publishes all changes in test index of a knowledgebase to its prod index."
+					},
+					"response": []
+				},
+				{
+					"name": "Replace Knowledgebase",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{Ocp-Apim-Subscription-Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"qnaList\": [\r\n    {\r\n      \"id\": 0,\r\n      \"answer\": \"You can change the default message if you use the QnAMakerDialog. See this for details: https://docs.botframework.com/en-us/azure-bot-service/templates/qnamaker/#navtitle\",\r\n      \"source\": \"Custom Editorial\",\r\n      \"questions\": [\r\n        \"How can I change the default message from QnA Maker?\"\r\n      ],\r\n      \"metadata\": []\r\n    },\r\n    {\r\n      \"id\": 0,\r\n      \"answer\": \"You can use our REST apis to manage your KB. See here for details: https://westus.dev.cognitive.microsoft.com/docs/services/58994a073d9e04097c7ba6fe/operations/58994a073d9e041ad42d9baa\",\r\n      \"source\": \"Custom Editorial\",\r\n      \"questions\": [\r\n        \"How do I programmatically update my KB?\"\r\n      ],\r\n      \"metadata\": [\r\n        {\r\n          \"name\": \"category\",\r\n          \"value\": \"api\"\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "https://{{region}}.api.cognitive.microsoft.com/qnamaker/v4.0/knowledgebases/{{kbId}}",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"api",
+								"cognitive",
+								"microsoft",
+								"com"
+							],
+							"path": [
+								"qnamaker",
+								"v4.0",
+								"knowledgebases",
+								"{{kbId}}"
+							]
+						},
+						"description": "Replace knowledgebase contents."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Knowledgebase",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "{{Content-Type}}",
+								"type": "text"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{Ocp-Apim-Subscription-Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.api.cognitive.microsoft.com/qnamaker/v4.0/knowledgebases/{{kbId}}",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"api",
+								"cognitive",
+								"microsoft",
+								"com"
+							],
+							"path": [
+								"qnamaker",
+								"v4.0",
+								"knowledgebases",
+								"{{kbId}}"
+							]
+						},
+						"description": "Asynchronous operation to modify a knowledgebase."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Knowledgebase",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{Ocp-Apim-Subscription-Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.api.cognitive.microsoft.com/qnamaker/v4.0/knowledgebases/{{kbId}}",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"api",
+								"cognitive",
+								"microsoft",
+								"com"
+							],
+							"path": [
+								"qnamaker",
+								"v4.0",
+								"knowledgebases",
+								"{{kbId}}"
+							]
+						},
+						"description": "Deletes the knowledgebase and all its data."
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Answer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "EndpointKey {{endpointkey}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"question\":\"Wie gebe ich eine Änderung meiner Anschrift oder anderer Stammdaten bekannt?\"}"
+						},
+						"url": {
+							"raw": "https://{{host}}.azurewebsites.net/qnamaker/knowledgebases/{{kbId}}/generateAnswer",
+							"protocol": "https",
+							"host": [
+								"{{host}}",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"qnamaker",
+								"knowledgebases",
+								"{{kbId}}",
+								"generateAnswer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Alterations",
+			"item": [
+				{
+					"name": "Download Alterations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{Ocp-Apim-Subscription-Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.api.cognitive.microsoft.com/qnamaker/v4.0/alterations",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"api",
+								"cognitive",
+								"microsoft",
+								"com"
+							],
+							"path": [
+								"qnamaker",
+								"v4.0",
+								"alterations"
+							]
+						},
+						"description": "Download alterations from runtime."
+					},
+					"response": []
+				},
+				{
+					"name": "Replace Alterations",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "{{Content-Type}}",
+								"type": "text"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{Ocp-Apim-Subscription-Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.api.cognitive.microsoft.com/qnamaker/v4.0/alterations",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"api",
+								"cognitive",
+								"microsoft",
+								"com"
+							],
+							"path": [
+								"qnamaker",
+								"v4.0",
+								"alterations"
+							]
+						},
+						"description": "Replace alterations data."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endpoint",
+			"item": [
+				{
+					"name": "Get Endpoint Keys",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{Ocp-Apim-Subscription-Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.api.cognitive.microsoft.com/qnamaker/v4.0/endpointkeys",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"api",
+								"cognitive",
+								"microsoft",
+								"com"
+							],
+							"path": [
+								"qnamaker",
+								"v4.0",
+								"endpointkeys"
+							]
+						},
+						"description": "Gets endpoint keys for an endpoint"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Endpoint Settings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{Ocp-Apim-Subscription-Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.api.cognitive.microsoft.com/qnamaker/v4.0/endpointsettings",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"api",
+								"cognitive",
+								"microsoft",
+								"com"
+							],
+							"path": [
+								"qnamaker",
+								"v4.0",
+								"endpointsettings"
+							]
+						},
+						"description": "Gets endpoint settings for an endpoint"
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Endpoint Keys",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{Ocp-Apim-Subscription-Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.api.cognitive.microsoft.com/qnamaker/v4.0/endpointkeys/{{keyType}}?=",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"api",
+								"cognitive",
+								"microsoft",
+								"com"
+							],
+							"path": [
+								"qnamaker",
+								"v4.0",
+								"endpointkeys",
+								"{{keyType}}"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						},
+						"description": "Re-generates an endpoint key."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Endpoint Settings",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "{{Content-Type}}",
+								"type": "text"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{Ocp-Apim-Subscription-Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.api.cognitive.microsoft.com/qnamaker/v4.0/endpointsettings",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"api",
+								"cognitive",
+								"microsoft",
+								"com"
+							],
+							"path": [
+								"qnamaker",
+								"v4.0",
+								"endpointsettings"
+							]
+						},
+						"description": "Update endpoint seettings for an endpoint."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Operation Details",
+			"item": [
+				{
+					"name": "Get Operation Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{Ocp-Apim-Subscription-Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.api.cognitive.microsoft.com/qnamaker/v4.0/operations/{{operationId}}",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"api",
+								"cognitive",
+								"microsoft",
+								"com"
+							],
+							"path": [
+								"qnamaker",
+								"v4.0",
+								"operations",
+								"{{operationId}}"
+							]
+						},
+						"description": "Gets details of a specific long running operation."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
