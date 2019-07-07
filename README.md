@@ -4,7 +4,7 @@ Every piece of code which you'll see in our videos on our [YouTube channel](http
 This repo is maintained by:
 * [Albert-Jan Schot](https://twitter.com/appieschot)
 * [Rick Van Rousselt](https://twitter.com/RickVanRousselt)
-* [Stephan Bisser](https://twitter.com/cloudguy_pro)
+* [Stephan Bisser](https://twitter.com/stephanbisser)
 * [Thomas Gölles](https://twitter.com/thomyg)
 
 ![alt text](https://github.com/selectedtech/Samples/blob/master/Media/selectedtech_logo.png "SelectedTech")
