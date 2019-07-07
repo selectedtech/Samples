@@ -4,9 +4,13 @@ Every piece of code which you'll see in our videos on our [YouTube channel](http
 ## Tools
 
 The following tools are currently published by us and can be used:
-| Name | Description |
-| ---- | ----------- |
-| [QnA Maker Postman Collection](QnAMakerPostmanCollection/README.md) | A Postman collection which can be used to test a QnA Maker service instance as well as a knowledgebase |
+
+| Name  | Description |
+| ------------- | ------------- |
+| [QnA Maker Postman Collection](QnAMakerPostmanCollection/README.md)  | A Postman collection which can be used to test a QnA Maker service instance as well as a knowledgebase  |
+
+
+
 
 
 This repo is maintained by:
