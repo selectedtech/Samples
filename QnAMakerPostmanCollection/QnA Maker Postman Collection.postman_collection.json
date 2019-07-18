@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "74a678be-97b8-4bc4-ab00-bb9e6a433613",
+		"_postman_id": "73e19bcb-f778-4583-9d9a-2c382c51674b",
 		"name": "QnA Maker Postman Collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -244,7 +244,8 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "{{Content-Type}}",
+								"name": "Content-Type",
+								"value": "application/json",
 								"type": "text"
 							},
 							{
@@ -255,7 +256,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\r\n  \"add\": {\r\n    \"qnaList\": [\r\n      {\r\n        \"id\": 0,\r\n        \"answer\": \"You can change the default message if you use the QnAMakerDialog. See this for details: https://docs.botframework.com/en-us/azure-bot-service/templates/qnamaker/#navtitle\",\r\n        \"source\": \"Editorial\",\r\n        \"questions\": [\r\n          \"How can I change the default message from QnA Maker?\"\r\n        ],\r\n        \"metadata\": []\r\n      }\r\n\t]\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "https://{{region}}.api.cognitive.microsoft.com/qnamaker/v4.0/knowledgebases/{{kbId}}",
@@ -349,6 +350,52 @@
 								"generateAnswer"
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "Train Knowledgebase",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{Ocp-Apim-Subscription-Key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "EndpointKey {{endpointkey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"feedbackRecords\": [\r\n    {\r\n      \"userId\": \"sd53lsY=\",\r\n      \"userQuestion\": \"qna maker update\",\r\n      \"qnaId\": 4\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "https://{{host}}.azurewebsites.net/qnamaker/knowledgebases/{{kbId}}/train",
+							"protocol": "https",
+							"host": [
+								"{{host}}",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"qnamaker",
+								"knowledgebases",
+								"{{kbId}}",
+								"train"
+							]
+						},
+						"description": "Train call to add suggestions to the knowledgebase."
 					},
 					"response": []
 				}
