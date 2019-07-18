@@ -365,12 +365,6 @@
 								"type": "text"
 							},
 							{
-								"key": "Ocp-Apim-Subscription-Key",
-								"value": "{{Ocp-Apim-Subscription-Key}}",
-								"type": "text",
-								"disabled": true
-							},
-							{
 								"key": "Authorization",
 								"value": "EndpointKey {{endpointkey}}",
 								"type": "text"
