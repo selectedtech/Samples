@@ -13,6 +13,10 @@ During this workshop, you will learn about the following services:
 * Office 365
 * Azure
 
+## Slides
+
+Slides from the tutorial can be found [here](https://espc19storage.blob.core.windows.net/tutorial/ESPC19-AI_O365_Tutorial.pptx)
+
 ## Resources
 * [Project Cortex](https://techcommunity.microsoft.com/t5/Microsoft-365-Blog/Introducing-Project-Cortex/ba-p/966091)
 * [Azure Cognitive Services Overview](https://azure.microsoft.com/en-us/services/cognitive-services)
