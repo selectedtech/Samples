@@ -27,3 +27,5 @@ Slides from the tutorial can be found [here](https://espc19storage.blob.core.win
 * [Bot Builder Samples](https://github.com/microsoft/BotBuilder-Samples)
 * [Bot Framework Solutions](https://microsoft.github.io/botframework-solutions/)
 * [Bot Framework Composer](https://github.com/microsoft/BotFramework-Composer)
+* [JFK Files](https://jfk-demo.azurewebsites.net/#/)
+* [SPFx Bot Framework Web Part](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-bot-framework)
